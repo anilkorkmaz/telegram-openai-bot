@@ -1,6 +1,7 @@
+import { i18n } from "./i18n.js";
+import EnvNotFoundException from "./exception/EnvNotFoundException.js";
 import dotenv from "dotenv";
 dotenv.config();
-import { i18n } from "./i18n.js";
 
 export const getEnvirement = (name) => {
   let env = process.env[name];
@@ -27,6 +28,7 @@ export const getEligibleGroupIds = () => {
   try {
     arr = stringToNumberArray(getEnvirement("ELIGIBLE_TELEGRAM_GROUP_IDS"));
   } catch (e) {
+    console.error(e);
     return arr;
   }
 };
@@ -36,6 +38,7 @@ export const getEligibleUserIds = () => {
   try {
     arr = stringToNumberArray(getEnvirement("ELIGIBLE_TELEGRAM_USER_IDS"));
   } catch (e) {
+    console.error(e);
     return arr;
   }
 };
