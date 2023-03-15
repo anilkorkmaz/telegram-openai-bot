@@ -24,22 +24,20 @@ const stringToNumberArray = (str) => {
 };
 
 export const getEligibleGroupIds = () => {
-  let arr = [];
   try {
-    arr = stringToNumberArray(getEnvirement("ELIGIBLE_TELEGRAM_GROUP_IDS"));
+    return stringToNumberArray(getEnvirement("ELIGIBLE_TELEGRAM_GROUP_IDS"));
   } catch (e) {
     console.error(e);
-    return arr;
+    return [];
   }
 };
 
 export const getEligibleUserIds = () => {
-  let arr = [];
   try {
-    arr = stringToNumberArray(getEnvirement("ELIGIBLE_TELEGRAM_USER_IDS"));
+    return stringToNumberArray(getEnvirement("ELIGIBLE_TELEGRAM_USER_IDS"));
   } catch (e) {
     console.error(e);
-    return arr;
+    return [];
   }
 };
 
