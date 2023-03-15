@@ -26,16 +26,18 @@ export const getEligibleGroupIds = () => {
   let arr = [];
   try {
     arr = stringToNumberArray(getEnvirement("ELIGIBLE_TELEGRAM_GROUP_IDS"));
-  } catch (e) {}
-  return arr;
+  } catch (e) {
+    return arr;
+  }
 };
 
 export const getEligibleUserIds = () => {
   let arr = [];
   try {
-arr=stringToNumberArray(getEnvirement("ELIGIBLE_TELEGRAM_USER_IDS"));
-  } catch (e) {}
-  return arr;
+    arr = stringToNumberArray(getEnvirement("ELIGIBLE_TELEGRAM_USER_IDS"));
+  } catch (e) {
+    return arr;
+  }
 };
 
 export const getTranslate = (lang = "tr") => {
